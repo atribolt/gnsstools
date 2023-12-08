@@ -13,6 +13,8 @@ from datetime import datetime
               help='Input serial device or file contains NMEA data',
               required=True)
 def track(source: Path):
+  """read NMEA msgs from character dev or file and filter by GGA frames"""
+
   if source.is_char_device():
     from serial import serialposix
     iofactory = serialposix.Serial

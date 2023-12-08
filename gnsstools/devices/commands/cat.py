@@ -11,6 +11,8 @@ from serial import serialposix
               help='Input serial device',
               required=True)
 def cat(dev: str, output: io.IOBase):
+  """read character device or file"""
+
   s = serialposix.Serial(dev)
 
   try:
