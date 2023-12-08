@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "gnsstools"
+version = "1.0.0"
+description = "The tools for work in GNSS"
+authors = [
+	{ name="Youriy Volkov", email="atribolt@gmail.com" }
+]
+dynamic = ['dependencies']
+
+
+[tool.setuptools.dynamic]
+dependencies = {file='requirements.txt'}
+
+
+[tool.setuptools.packages.find]
+include = ["gnsstools*"]
+
+
+[project.scripts]
+gnssdevctl = 'gnsstools.devices:cli'
